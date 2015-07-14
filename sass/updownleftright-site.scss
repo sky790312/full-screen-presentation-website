@@ -1,0 +1,102 @@
+$item-width: 100px;
+$item-height: 100px;
+$controls-color: black;
+$controls-width: 22px;
+
+#updownleftright {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background-color: #64A5CF;
+	// ppts slide section
+	>.ppts {
+		position: relative;
+		left: 0;
+		top: 0;
+		width: 960px;
+		height: 680px;
+		margin: auto;
+		text-align: center;
+		section{
+			position: absolute;
+		  width: 100%;
+		  padding: 20px 0px;
+		  z-index: 10;
+		}
+	}
+	// can change dirrerent background color
+	// >.backgrounds {
+	// 	position: absolute;
+	//   width: 100%;
+	//   height: 100%;
+	//   top: 0;
+	//   left: 0;
+	//   color: #fff;
+ //  	background: #bee4fd;
+	//   // -webkit-perspective: 600px;
+	//   /* perspective: 600px; */
+	// }
+	// controls direction click icon
+	>.controls {
+		position: fixed;
+	  width: 110px;
+	  height: 110px;
+	  z-index: 30;
+	  right: 50px;
+	  bottom: 50px;
+	  >div {
+	  	position: absolute;
+	  	width: 0;
+	  	height: 0;
+	  	opacity: 0.05;
+  		border: 12px solid transparent;
+	  }
+		>.left {
+			top: 42px;
+  		border-right-width: $controls-width;
+  		border-right-color: $controls-color;
+		}
+		>.right {
+  		top: 42px;
+			left: 74px;
+  		border-left-width: $controls-width;
+			border-left-color: $controls-color;
+		}
+		>.up {
+  		left: 42px;
+  		border-bottom-width: $controls-width;
+			border-bottom-color: $controls-color;
+		}
+		>.down {
+			top: 74px;
+  		left: 42px;
+  		border-top-width: $controls-width;
+			border-top-color: $controls-color;
+		}
+		>.enabled {
+			cursor: pointer;
+			opacity: 1;
+			&:hover {
+  			opacity: 0.7;
+  		}
+		}
+	}
+	// direction animate
+	>.to-left {
+		left: -100%;
+		transition: left 2s ease-in-out;
+	}
+	>.to-right {
+		left: 100%;
+		transition: left 2s ease-in-out;
+	}
+	>.to-up {
+		top: -100%;
+		transition: top 1s ease-in-out;
+	}
+	>.to-down {
+		top: 100%;
+		transition: top 1.5s ease-in-out;
+	}
+}

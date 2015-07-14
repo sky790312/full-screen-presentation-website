@@ -15,9 +15,56 @@
 
 </head>
 <body>
-<div class="container">
-	view section
+<div id="updownleftright" class="clearfix">
+	<div class="ppts">
+		<section>
+			<section>
+				<h1>start</h1>
+				<h3>presentation</h3>
+			</section>
+		</section>
+		<section>
+			<section>
+				<h3>1</h3>
+			</section>
+			<section>
+				<h3>2</h3>
+			</section>
+			<section>
+				<h3>3</h3>
+			</section>
+		</section>
+		<section>
+			<section>
+				<h3>4</h3>
+			</section>
+			<section>
+				<h3>5</h3>
+			</section>
+		</section>
+		<section>
+			<section>
+				<h1>end</h1>
+				<h3>presentation</h3>
+			</section>
+		</section>
+	</div>
+	<!-- <div class="backgrounds"></div> -->
+	<div class="controls">
+		<div class="left"></div>
+		<div class="right"></div>
+		<div class="up"></div>
+		<div class="down"></div>
+	</div>
 </div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="js/updownleftright-site.js"></script>
+<script>
+	$('#updownleftright').updownleftright({
+		// width: 5,
+		// height: 4,
+		// mode: 'easy'
+	});
+</script>
 </html>
