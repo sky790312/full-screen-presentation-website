@@ -3,11 +3,14 @@
 try to make full screen presentation
 with bootstrap and jquery
 
-prototype => remember last section you view and can change each section bkg, title, text color
+prototype:
+1. remember last section you view!
+2. change each section bkg, title, text color!
+3. can use by keyboard or just click!
 
 #useing:
 
-1.one page only(one section children only):
+1. one page only(one section children only):
 
 				<section>
 					<section data-bkgcolor="#000" data-titlecolor="#fff" data-textcolor="#fff" data-index="0">
@@ -16,7 +19,7 @@ prototype => remember last section you view and can change each section bkg, tit
 					</section>
 				</section>
 
-2.multiple page(multiple section children only):
+2. multiple page(multiple section children only):
 
 				<section>
 					<section data-bkgcolor="#546" data-titlecolor="#f0f" data-textcolor="#0ff" data-index="2/1">
