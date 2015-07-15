@@ -8,7 +8,7 @@ prototype:
 2. change each section bkg, title, text color!
 3. can use by keyboard or just click!
 
-#useing:
+#using:
 
 1. one page only(one section children only):
 
