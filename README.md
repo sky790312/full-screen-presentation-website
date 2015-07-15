@@ -33,7 +33,8 @@ prototype:
 				</section>
 
 #padding:
-				<h3>adding the hash tag</h3>
-				<h3>adding percentage</h3>
-				<h3>adding sitemap</h3>
-				<h3>adding more css effective</h3>
+
+1. adding the hash tag
+2. adding percentage
+3. adding sitemap
+4. adding more css effective
