@@ -15,6 +15,7 @@
 })(function($){
 
 	var updownleftright = (function(element, settings){
+    var instanceUid = 0;
 
     /*
      *  constructor function for updownleftright
@@ -29,15 +30,8 @@
       	bkgcolor: '#000',
       	titlecolor: '#fff',
       	textcolor: '#ff0',
-      	lastindex: ''
-      	// textColor
-      	// width: 4,
-      	// height: 4,
-      	// mode: 'easy'
-        // arrowUp: '.arrow-up',
-        // arrowDown: '.arrow-down',
-        // arrowRight: '.arrow-right',
-        // arrowLeft: '.arrow-left'
+      	lastindex: '',
+      	duration: 600
       };
 
 	    // extend this.initials args properties
@@ -46,13 +40,10 @@
       // operation on this.$el
       this.$el = $(element);
 
-	    // ensure that the value of 'this' always references this element
-      // this.handleDirection = $.proxy(this.handleDirection,this);
-
       this.init();
 
 		 	// provides each carousel with a unique ID
-      // this.instanceUid = instanceUid++;
+      this.instanceUid = instanceUid++;
     }
 
     return settingDefault;
@@ -68,12 +59,15 @@
     // init ppts
     this.pptsInit();
 
+    // init percentages
+    this.progressInit();
+
    //  // bind events
     this.eventsBind();
   };
 
 	/**
-	 *  init first page and related setting
+	 *  init first section page and related setting
 	 */
 
 	updownleftright.prototype.pptsInit = function(){
@@ -105,6 +99,14 @@
 		// 	if($this.children().length > 1)
 		// 		$this.addClass('downs');
 		// });
+	};
+
+	/**
+	 *  init percentages setting
+	 */
+
+	updownleftright.prototype.progressInit = function(){
+		this.eachPercent = 100 / (this.$el.find('.ppts > section').children().length - 1);
 	};
 
 	/**
@@ -168,8 +170,9 @@
 			default:
 				return;
 		}
-		this.handleStyle();
-		this.handleDirection();
+		setTimeout(this.handleProgress.bind(this), this.initials.duration);
+		setTimeout(this.handleStyle.bind(this), this.initials.duration);
+		setTimeout(this.handleDirection.bind(this), this.initials.duration);
 	};
 
 	/**
@@ -212,8 +215,9 @@
 			default:
 				return;
 		};
-		this.handleStyle();
-		this.handleDirection();
+		setTimeout(this.handleProgress.bind(this), this.initials.duration);
+		setTimeout(this.handleStyle.bind(this), this.initials.duration);
+		setTimeout(this.handleDirection.bind(this), this.initials.duration);
 	};
 
 	/**
@@ -221,15 +225,30 @@
 	 */
 
 	updownleftright.prototype.handleStyle = function(){
-		setTimeout(function () {
-			var bkgcolor = this.$el.find('.ppts > .show').children('.show').data('bkgcolor') ? this.$el.find('.ppts > .show').children('.show').data('bkgcolor') : this.settings.bkgcolor,
-					titlecolor = this.$el.find('.ppts > .show').children('.show').data('titlecolor') ? this.$el.find('.ppts > .show').children('.show').data('titlecolor') : this.settings.titlecolor,
-					textcolor = this.$el.find('.ppts > .show').children('.show').data('textcolor') ? this.$el.find('.ppts > .show').children('.show').data('textcolor') : this.settings.textcolor;
+			var $show = this.$el.find('.ppts > .show'),
+					bkgcolor = $show.children('.show').data('bkgcolor') ? this.$el.find('.ppts > .show').children('.show').data('bkgcolor') : this.settings.bkgcolor,
+					titlecolor = $show.children('.show').data('titlecolor') ? this.$el.find('.ppts > .show').children('.show').data('titlecolor') : this.settings.titlecolor,
+					textcolor = $show.children('.show').data('textcolor') ? this.$el.find('.ppts > .show').children('.show').data('textcolor') : this.settings.textcolor;
 
 			this.$el.css('background-color', bkgcolor);
-			this.$el.find('.ppts > .show').find('h1').css('color', titlecolor);
-			this.$el.find('.ppts > .show').find('h3').css('color', textcolor);
-		}.bind(this), 600);
+			$show.find('h1').css('color', titlecolor);
+			$show.find('h3').css('color', textcolor);
+	};
+
+	/**
+	 *  handle progress percentage
+	 */
+
+	updownleftright.prototype.handleProgress = function(){
+			var index = this.$el.find('.ppts > .show').index(),
+					currentIndex = 0;
+			for(var i = 0, j = this.$el.find('.ppts > .show').index(); i <= j; i += 1){
+				if(this.$el.children('.ppts').children().eq(i).children().hasClass('show'))
+					currentIndex += this.$el.find('.ppts > .show').children('.show').index();
+				else
+					currentIndex += this.$el.find('.ppts > section').eq(i).children().length;
+			}
+			this.$el.find('.progress-percentage').css('width', currentIndex * this.eachPercent + "%");
 	};
 
 	/**
@@ -237,7 +256,6 @@
 	 */
 
 	updownleftright.prototype.handleDirection = function(){
-		setTimeout(function () {
 			// remove all old next and prev class state
 			this.$el.find('.next').removeClass('next');
 			this.$el.find('.prev').removeClass('prev');
@@ -251,7 +269,6 @@
 			this.$el.find('.ppts > .prev').length > 0 ? this.$el.find('.left').addClass('enabled') : '';
 			this.$el.find('.ppts > .show').children('.next').length > 0 ? this.$el.find('.down').addClass('enabled') : '';
 			this.$el.find('.ppts > .show').children('.prev').length > 0 ? this.$el.find('.up').addClass('enabled') : '';
-		}.bind(this), 600);
 	};
 
 	/**
@@ -265,7 +282,7 @@
 			this.$el.find('.ppts > .prev').children().eq(this.settings.lastindex).removeClass('hide').addClass('show');
 			this.$el.find('.ppts > .show').removeClass('show').addClass('hide');
 			this.$el.find('.ppts > .prev').removeClass('hide').addClass('show');
-		}.bind(this), 600);
+		}.bind(this), this.initials.duration);
 	};
 
 	/**
@@ -279,7 +296,7 @@
 			this.$el.find('.ppts > .next').children().eq(this.settings.lastindex).removeClass('hide').addClass('show');
 			this.$el.find('.ppts > .show').removeClass('show').addClass('hide');
 			this.$el.find('.ppts > .next').removeClass('hide').addClass('show');
-		}.bind(this), 600);
+		}.bind(this), this.initials.duration);
 	};
 
 	/**
@@ -291,7 +308,7 @@
 			// add the new show class on section
 			this.$el.find('.ppts > .show').children('.show').removeClass('show').addClass('hide');
 			this.$el.find('.ppts > .show').children('.prev').removeClass('hide').addClass('show');
-		}.bind(this), 600);
+		}.bind(this), this.initials.duration);
 	};
 
 	/**
@@ -303,7 +320,7 @@
 			// add the new show class on section
 			this.$el.find('.ppts > .show').children('.show').removeClass('show').addClass('hide');
 			this.$el.find('.ppts > .show').children('.next').removeClass('hide').addClass('show');
-		}.bind(this), 600);
+		}.bind(this), this.initials.duration);
 	};
 
 	/**
@@ -315,7 +332,7 @@
 		this.$el.find('.ppts').addClass(direction);
 		setTimeout(function () {
 			this.$el.find('.ppts').removeClass(direction);
-		}.bind(this), 600);
+		}.bind(this), this.initials.duration);
 	};
 
 	/**

@@ -1,4 +1,4 @@
-/* line 6, ../sass/updownleftright-site.scss */
+/* line 7, ../sass/updownleftright-site.scss */
 #updownleftright {
   position: absolute;
   width: 100%;
@@ -6,7 +6,7 @@
   overflow: hidden;
   opacity: 0.9;
 }
-/* line 14, ../sass/updownleftright-site.scss */
+/* line 15, ../sass/updownleftright-site.scss */
 #updownleftright > .ppts {
   position: relative;
   left: 0;
@@ -16,7 +16,7 @@
   margin: auto;
   text-align: center;
 }
-/* line 22, ../sass/updownleftright-site.scss */
+/* line 23, ../sass/updownleftright-site.scss */
 #updownleftright > .ppts section {
   position: absolute;
   top: 50%;
@@ -25,7 +25,7 @@
   padding: 20px;
   z-index: 10;
 }
-/* line 44, ../sass/updownleftright-site.scss */
+/* line 45, ../sass/updownleftright-site.scss */
 #updownleftright > .controls {
   position: fixed;
   width: 110px;
@@ -34,7 +34,7 @@
   right: 50px;
   bottom: 50px;
 }
-/* line 51, ../sass/updownleftright-site.scss */
+/* line 52, ../sass/updownleftright-site.scss */
 #updownleftright > .controls > div {
   position: absolute;
   width: 0;
@@ -42,58 +42,71 @@
   opacity: 0.05;
   border: 12px solid transparent;
 }
-/* line 58, ../sass/updownleftright-site.scss */
+/* line 59, ../sass/updownleftright-site.scss */
 #updownleftright > .controls > .left {
   top: 42px;
   border-right-width: 22px;
   border-right-color: #fff;
 }
-/* line 63, ../sass/updownleftright-site.scss */
+/* line 64, ../sass/updownleftright-site.scss */
 #updownleftright > .controls > .right {
   top: 42px;
   left: 74px;
   border-left-width: 22px;
   border-left-color: #fff;
 }
-/* line 69, ../sass/updownleftright-site.scss */
+/* line 70, ../sass/updownleftright-site.scss */
 #updownleftright > .controls > .up {
   left: 42px;
   border-bottom-width: 22px;
   border-bottom-color: #fff;
 }
-/* line 74, ../sass/updownleftright-site.scss */
+/* line 75, ../sass/updownleftright-site.scss */
 #updownleftright > .controls > .down {
   top: 74px;
   left: 42px;
   border-top-width: 22px;
   border-top-color: #fff;
 }
-/* line 80, ../sass/updownleftright-site.scss */
+/* line 81, ../sass/updownleftright-site.scss */
 #updownleftright > .controls > .enabled {
   cursor: pointer;
   opacity: 1;
 }
-/* line 83, ../sass/updownleftright-site.scss */
+/* line 84, ../sass/updownleftright-site.scss */
 #updownleftright > .controls > .enabled:hover {
   opacity: 0.7;
 }
-/* line 89, ../sass/updownleftright-site.scss */
+/* line 90, ../sass/updownleftright-site.scss */
 #updownleftright > .to-left {
   left: -100%;
-  transition: left 1s ease-in-out;
+  opacity: 0;
+  transition: left 1s ease-in-out, opacity 1s;
 }
-/* line 93, ../sass/updownleftright-site.scss */
+/* line 95, ../sass/updownleftright-site.scss */
 #updownleftright > .to-right {
   left: 100%;
-  transition: left 1s ease-in-out;
+  opacity: 0;
+  transition: left 1s ease-in-out, opacity 1s;
 }
-/* line 97, ../sass/updownleftright-site.scss */
+/* line 100, ../sass/updownleftright-site.scss */
 #updownleftright > .to-up {
   top: -100%;
-  transition: top .5s ease-in-out;
+  opacity: 0;
+  transition: top 1s ease-in-out, opacity 1s;
 }
-/* line 101, ../sass/updownleftright-site.scss */
+/* line 105, ../sass/updownleftright-site.scss */
 #updownleftright > .to-down {
   top: 100%;
-  transition: top .75s ease-in-out;
+  opacity: 0;
+  transition: top 1s ease-in-out, opacity 1s;
+}
+/* line 111, ../sass/updownleftright-site.scss */
+#updownleftright > .progress-percentage {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  z-index: 10;
+  background-color: #fff;
 }

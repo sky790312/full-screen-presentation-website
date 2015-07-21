@@ -2,6 +2,7 @@ $item-width: 100px;
 $item-height: 100px;
 $controls-color: #fff;
 $controls-width: 22px;
+$animate-time: 1s;
 
 #updownleftright {
 	position: absolute;
@@ -88,18 +89,31 @@ $controls-width: 22px;
 	// direction animate
 	>.to-left {
 		left: -100%;
-		transition: left 1s ease-in-out;
+		opacity: 0;
+		transition: left $animate-time ease-in-out, opacity $animate-time;
 	}
 	>.to-right {
 		left: 100%;
-		transition: left 1s ease-in-out;
+		opacity: 0;
+		transition: left $animate-time ease-in-out, opacity $animate-time;
 	}
 	>.to-up {
 		top: -100%;
-		transition: top .5s ease-in-out;
+		opacity: 0;
+		transition: top $animate-time ease-in-out, opacity $animate-time;
 	}
 	>.to-down {
 		top: 100%;
-		transition: top .75s ease-in-out;
+		opacity: 0;
+		transition: top $animate-time ease-in-out, opacity $animate-time;
+	}
+	// progress percentage
+	>.progress-percentage {
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		height: 3px;
+		z-index: 10;
+		background-color: #fff;
 	}
 }

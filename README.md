@@ -7,6 +7,7 @@ prototype:
 1. remember last section you view!
 2. change each section bkg, title, text color!
 3. can use by keyboard or just click!
+4. each page percentage
 
 #using:
 
@@ -35,6 +36,5 @@ prototype:
 #padding:
 
 1. adding the hash tag
-2. adding percentage
-3. adding sitemap
-4. adding more css effective
+2. adding sitemap
+3. adding more css effective
