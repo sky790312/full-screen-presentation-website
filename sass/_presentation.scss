@@ -1,0 +1,58 @@
+#updownleftright {
+		background: url('images/bkg1.jpg') no-repeat right top;
+	.aboutme {
+		.aboutme-text {
+			float: left;
+			padding: 150px 20px 50px 80px;
+		}
+		.aboutme-img {
+			float: right;
+			padding: 40px 150px 40px 0;
+			> img {
+				border-radius: 50px;
+			}
+		}
+	}
+	.looking-myself {
+		// > div {
+		// 	position: absolute;
+		// 	top: 50%;
+		// 	transform:translateY(-50%);
+		// }
+		// > h1 {
+		// 	left: 0;
+		// }
+		> img {
+			padding-top: 40px;
+		}
+		> div {
+			position: absolute;
+    	top: 50%;
+    	left: 50%;
+    	font-size: 17px;
+		}
+		> .left {
+    	margin-left: -30%;
+    	transform: rotate(-22.5deg);
+		}
+		> .right {
+    	margin-left: 16%;
+    	transform: rotate(22.5deg);
+		}
+		> .psychologist {
+			top: 60%;
+		}
+		> .drummer {
+			top: 65%;
+		}
+		> .keyboard {
+			top: 80%;
+		}
+		> .photographer {
+			top: 70%;
+		}
+		> .anything {
+			top: 80%;
+		}
+	}
+}

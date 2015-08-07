@@ -1,4 +1,176 @@
-/* line 7, ../sass/updownleftright-site.scss */
+@charset "UTF-8";
+/* for my presentation */
+/* line 1, ../sass/_presentation.scss */
+#updownleftright {
+  background: url("images/bkg1.jpg") no-repeat right top;
+}
+/* line 4, ../sass/_presentation.scss */
+#updownleftright .aboutme .aboutme-text {
+  float: left;
+  padding: 150px 20px 50px 80px;
+}
+/* line 8, ../sass/_presentation.scss */
+#updownleftright .aboutme .aboutme-img {
+  float: right;
+  padding: 40px 150px 40px 0;
+}
+/* line 11, ../sass/_presentation.scss */
+#updownleftright .aboutme .aboutme-img > img {
+  border-radius: 50px;
+}
+/* line 25, ../sass/_presentation.scss */
+#updownleftright .looking-myself > img {
+  padding-top: 40px;
+}
+/* line 28, ../sass/_presentation.scss */
+#updownleftright .looking-myself > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 17px;
+}
+/* line 34, ../sass/_presentation.scss */
+#updownleftright .looking-myself > .left {
+  margin-left: -30%;
+  transform: rotate(-22.5deg);
+}
+/* line 38, ../sass/_presentation.scss */
+#updownleftright .looking-myself > .right {
+  margin-left: 16%;
+  transform: rotate(22.5deg);
+}
+/* line 42, ../sass/_presentation.scss */
+#updownleftright .looking-myself > .psychologist {
+  top: 60%;
+}
+/* line 45, ../sass/_presentation.scss */
+#updownleftright .looking-myself > .drummer {
+  top: 65%;
+}
+/* line 48, ../sass/_presentation.scss */
+#updownleftright .looking-myself > .keyboard {
+  top: 80%;
+}
+/* line 51, ../sass/_presentation.scss */
+#updownleftright .looking-myself > .photographer {
+  top: 70%;
+}
+/* line 54, ../sass/_presentation.scss */
+#updownleftright .looking-myself > .anything {
+  top: 80%;
+}
+
+/*
+ * timeline ul li css style
+ */
+/* line 18, ../sass/_timeline.scss */
+.link a {
+  padding: 5px;
+  display: inline-block;
+  position: relative;
+  font-size: 3em;
+  color: white;
+  text-decoration: none;
+}
+/* line 26, ../sass/_timeline.scss */
+.link a:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 0px;
+  height: 3px;
+  background-color: yellow;
+  transition: all 0.5s ease;
+}
+/* line 40, ../sass/_timeline.scss */
+.link a:hover:after {
+  max-width: 100%;
+}
+
+/* 動態效果 */
+/* line 56, ../sass/_timeline.scss */
+.flow > ul li,
+.flow > ul li .item-num,
+.flow > ul li .item-title {
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+/* line 63, ../sass/_timeline.scss */
+.flow ul {
+  height: 100px;
+}
+
+/* line 68, ../sass/_timeline.scss */
+.flow > ul li {
+  position: relative;
+  float: left;
+  margin-top: 40px;
+  width: 180px;
+  height: 12px;
+  cursor: pointer;
+  border-bottom: 4px solid #000;
+  /* 滑過效果 */
+  /* 品項編號 */
+  /* 品項敘述 */
+}
+/* line 77, ../sass/_timeline.scss */
+.flow > ul li a {
+  text-decoration: none;
+}
+/* line 82, ../sass/_timeline.scss */
+.flow > ul li:hover, .flow > ul li .active {
+  border-bottom: 4px solid #cf0;
+}
+/* line 87, ../sass/_timeline.scss */
+.flow > ul li .item-num {
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  margin-left: -17px;
+  width: 35px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 9px;
+  font-weight: bold;
+  text-align: center;
+  background: #000;
+  color: #969696;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+/* line 104, ../sass/_timeline.scss */
+.flow > ul li:hover .item-num,
+.flow > ul li .active .item-num {
+  top: -5px;
+  background: #cf0;
+  color: #000;
+}
+/* line 115, ../sass/_timeline.scss */
+.flow > ul li .item-title {
+  position: absolute;
+  top: -25px;
+  display: block;
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+  color: #000;
+}
+/* line 125, ../sass/_timeline.scss */
+.flow > ul li:hover .item-title,
+.flow > ul li .active .item-title {
+  top: -30px;
+  color: #cf0;
+}
+
+/* for my presentation */
+/* line 12, ../sass/updownleftright-site.scss */
 #updownleftright {
   position: absolute;
   width: 100%;
@@ -6,7 +178,7 @@
   overflow: hidden;
   opacity: 0.9;
 }
-/* line 15, ../sass/updownleftright-site.scss */
+/* line 20, ../sass/updownleftright-site.scss */
 #updownleftright > .ppts {
   position: relative;
   left: 0;
@@ -16,7 +188,7 @@
   margin: auto;
   text-align: center;
 }
-/* line 23, ../sass/updownleftright-site.scss */
+/* line 28, ../sass/updownleftright-site.scss */
 #updownleftright > .ppts section {
   position: absolute;
   top: 50%;
@@ -25,7 +197,7 @@
   padding: 20px;
   z-index: 10;
 }
-/* line 45, ../sass/updownleftright-site.scss */
+/* line 50, ../sass/updownleftright-site.scss */
 #updownleftright > .controls {
   position: fixed;
   width: 110px;
@@ -34,7 +206,7 @@
   right: 50px;
   bottom: 50px;
 }
-/* line 52, ../sass/updownleftright-site.scss */
+/* line 57, ../sass/updownleftright-site.scss */
 #updownleftright > .controls > div {
   position: absolute;
   width: 0;
@@ -42,66 +214,66 @@
   opacity: 0.05;
   border: 12px solid transparent;
 }
-/* line 59, ../sass/updownleftright-site.scss */
+/* line 64, ../sass/updownleftright-site.scss */
 #updownleftright > .controls > .left {
   top: 42px;
   border-right-width: 22px;
   border-right-color: #fff;
 }
-/* line 64, ../sass/updownleftright-site.scss */
+/* line 69, ../sass/updownleftright-site.scss */
 #updownleftright > .controls > .right {
   top: 42px;
   left: 74px;
   border-left-width: 22px;
   border-left-color: #fff;
 }
-/* line 70, ../sass/updownleftright-site.scss */
+/* line 75, ../sass/updownleftright-site.scss */
 #updownleftright > .controls > .up {
   left: 42px;
   border-bottom-width: 22px;
   border-bottom-color: #fff;
 }
-/* line 75, ../sass/updownleftright-site.scss */
+/* line 80, ../sass/updownleftright-site.scss */
 #updownleftright > .controls > .down {
   top: 74px;
   left: 42px;
   border-top-width: 22px;
   border-top-color: #fff;
 }
-/* line 81, ../sass/updownleftright-site.scss */
+/* line 86, ../sass/updownleftright-site.scss */
 #updownleftright > .controls > .enabled {
   cursor: pointer;
   opacity: 1;
 }
-/* line 84, ../sass/updownleftright-site.scss */
+/* line 89, ../sass/updownleftright-site.scss */
 #updownleftright > .controls > .enabled:hover {
   opacity: 0.7;
 }
-/* line 90, ../sass/updownleftright-site.scss */
+/* line 95, ../sass/updownleftright-site.scss */
 #updownleftright > .to-left {
   left: -100%;
   opacity: 0;
   transition: left 1s ease-in-out, opacity 1s;
 }
-/* line 95, ../sass/updownleftright-site.scss */
+/* line 100, ../sass/updownleftright-site.scss */
 #updownleftright > .to-right {
   left: 100%;
   opacity: 0;
   transition: left 1s ease-in-out, opacity 1s;
 }
-/* line 100, ../sass/updownleftright-site.scss */
+/* line 105, ../sass/updownleftright-site.scss */
 #updownleftright > .to-up {
   top: -100%;
   opacity: 0;
   transition: top 1s ease-in-out, opacity 1s;
 }
-/* line 105, ../sass/updownleftright-site.scss */
+/* line 110, ../sass/updownleftright-site.scss */
 #updownleftright > .to-down {
   top: 100%;
   opacity: 0;
   transition: top 1s ease-in-out, opacity 1s;
 }
-/* line 111, ../sass/updownleftright-site.scss */
+/* line 116, ../sass/updownleftright-site.scss */
 #updownleftright > .progress-percentage {
   position: fixed;
   left: 0;
