@@ -13,7 +13,22 @@
 			}
 		}
 	}
-	.looking-myself {
+	.me-personality {
+		text-align: left;
+		> img {
+			position: absolute;
+    	top: 0;
+    	right: 0;
+		}
+	}
+	.me-moreimg {
+		padding: 20px;
+		> img {
+			padding: 0 20px;
+			float: left;
+		}
+	}
+	.me-looking {
 		// > div {
 		// 	position: absolute;
 		// 	top: 50%;
@@ -53,6 +68,36 @@
 		}
 		> .anything {
 			top: 80%;
+		}
+	}
+	.sharing {
+		height: 500px;
+		.share1 {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.share2 {
+			position: absolute;
+			top: 30%;
+			right: 20%;
+		}
+	}
+	.foreign {
+		width: 800px;
+		height: 500px;
+		margin: 20px auto;
+		> img {
+			float: left;
+			padding: 10px;
+		}
+	}
+	.pets {
+		width: 800px;
+		height: 500px;
+		> img {
+			float: left;
+			width: 200px;
 		}
 	}
 }

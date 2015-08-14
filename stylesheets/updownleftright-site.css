@@ -18,46 +18,102 @@
 #updownleftright .aboutme .aboutme-img > img {
   border-radius: 50px;
 }
-/* line 25, ../sass/_presentation.scss */
-#updownleftright .looking-myself > img {
+/* line 16, ../sass/_presentation.scss */
+#updownleftright .me-personality {
+  text-align: left;
+}
+/* line 18, ../sass/_presentation.scss */
+#updownleftright .me-personality > img {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+/* line 24, ../sass/_presentation.scss */
+#updownleftright .me-moreimg {
+  padding: 20px;
+}
+/* line 26, ../sass/_presentation.scss */
+#updownleftright .me-moreimg > img {
+  padding: 0 20px;
+  float: left;
+}
+/* line 40, ../sass/_presentation.scss */
+#updownleftright .me-looking > img {
   padding-top: 40px;
 }
-/* line 28, ../sass/_presentation.scss */
-#updownleftright .looking-myself > div {
+/* line 43, ../sass/_presentation.scss */
+#updownleftright .me-looking > div {
   position: absolute;
   top: 50%;
   left: 50%;
   font-size: 17px;
 }
-/* line 34, ../sass/_presentation.scss */
-#updownleftright .looking-myself > .left {
+/* line 49, ../sass/_presentation.scss */
+#updownleftright .me-looking > .left {
   margin-left: -30%;
   transform: rotate(-22.5deg);
 }
-/* line 38, ../sass/_presentation.scss */
-#updownleftright .looking-myself > .right {
+/* line 53, ../sass/_presentation.scss */
+#updownleftright .me-looking > .right {
   margin-left: 16%;
   transform: rotate(22.5deg);
 }
-/* line 42, ../sass/_presentation.scss */
-#updownleftright .looking-myself > .psychologist {
+/* line 57, ../sass/_presentation.scss */
+#updownleftright .me-looking > .psychologist {
   top: 60%;
 }
-/* line 45, ../sass/_presentation.scss */
-#updownleftright .looking-myself > .drummer {
+/* line 60, ../sass/_presentation.scss */
+#updownleftright .me-looking > .drummer {
   top: 65%;
 }
-/* line 48, ../sass/_presentation.scss */
-#updownleftright .looking-myself > .keyboard {
+/* line 63, ../sass/_presentation.scss */
+#updownleftright .me-looking > .keyboard {
   top: 80%;
 }
-/* line 51, ../sass/_presentation.scss */
-#updownleftright .looking-myself > .photographer {
+/* line 66, ../sass/_presentation.scss */
+#updownleftright .me-looking > .photographer {
   top: 70%;
 }
-/* line 54, ../sass/_presentation.scss */
-#updownleftright .looking-myself > .anything {
+/* line 69, ../sass/_presentation.scss */
+#updownleftright .me-looking > .anything {
   top: 80%;
+}
+/* line 73, ../sass/_presentation.scss */
+#updownleftright .sharing {
+  height: 500px;
+}
+/* line 75, ../sass/_presentation.scss */
+#updownleftright .sharing .share1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* line 80, ../sass/_presentation.scss */
+#updownleftright .sharing .share2 {
+  position: absolute;
+  top: 30%;
+  right: 20%;
+}
+/* line 86, ../sass/_presentation.scss */
+#updownleftright .foreign {
+  width: 800px;
+  height: 500px;
+  margin: 20px auto;
+}
+/* line 90, ../sass/_presentation.scss */
+#updownleftright .foreign > img {
+  float: left;
+  padding: 10px;
+}
+/* line 95, ../sass/_presentation.scss */
+#updownleftright .pets {
+  width: 800px;
+  height: 500px;
+}
+/* line 98, ../sass/_presentation.scss */
+#updownleftright .pets > img {
+  float: left;
+  width: 200px;
 }
 
 /*
@@ -125,7 +181,7 @@
 }
 /* line 82, ../sass/_timeline.scss */
 .flow > ul li:hover, .flow > ul li .active {
-  border-bottom: 4px solid #cf0;
+  border-bottom: 4px solid cornflowerblue;
 }
 /* line 87, ../sass/_timeline.scss */
 .flow > ul li .item-num {
@@ -149,7 +205,7 @@
 .flow > ul li:hover .item-num,
 .flow > ul li .active .item-num {
   top: -5px;
-  background: #cf0;
+  background: cornflowerblue;
   color: #000;
 }
 /* line 115, ../sass/_timeline.scss */
@@ -166,7 +222,7 @@
 .flow > ul li:hover .item-title,
 .flow > ul li .active .item-title {
   top: -30px;
-  color: #cf0;
+  color: cornflowerblue;
 }
 
 /* for my presentation */
