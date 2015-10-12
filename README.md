@@ -1,9 +1,10 @@
-# updownleftright site
+# updownleftright site & my presentation
 
 try to make full screen presentation
 with bootstrap and jquery
 
-prototype:
+#prototype:
+
 1. remember last section you view!
 2. change each section bkg, title, text color!
 3. can use by keyboard or just click!
